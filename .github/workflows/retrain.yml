@@ -26,7 +26,6 @@ jobs:
 
       - name: Train Model
         run: |
-          cd MLProject
           python MLProject/modelling.py
 
       - name: Upload MLflow Artifacts
