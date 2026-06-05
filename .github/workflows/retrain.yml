@@ -22,12 +22,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r ./requirements.txt
+          pip install -r MLProject/requirements.txt
 
       - name: Train Model
         run: |
           cd MLProject
-          python modelling.py
+          python MLProject/modelling.py
 
       - name: Upload MLflow Artifacts
         uses: actions/upload-artifact@v4
