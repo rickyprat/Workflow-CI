@@ -1,0 +1,9 @@
+{
+    "classifier__C": 0.5,
+    "tfidf__max_features": 3000,
+    "tfidf__min_df": 2,
+    "tfidf__ngram_range": [
+        1,
+        1
+    ]
+}

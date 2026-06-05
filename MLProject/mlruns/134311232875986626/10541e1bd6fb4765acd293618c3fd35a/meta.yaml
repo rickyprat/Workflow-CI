@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ricky.pratama/Downloads/membangun_machine_learning/mlruns/134311232875986626/10541e1bd6fb4765acd293618c3fd35a/artifacts
+end_time: 1780594388187
+entry_point_name: ''
+experiment_id: '134311232875986626'
+lifecycle_stage: active
+run_id: 10541e1bd6fb4765acd293618c3fd35a
+run_name: linear_svc_tfidf_manual_tuning
+run_uuid: 10541e1bd6fb4765acd293618c3fd35a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780594318319
+status: 3
+tags: []
+user_id: root
