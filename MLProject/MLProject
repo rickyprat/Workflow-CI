@@ -1,4 +1,4 @@
-name: sentiment-instagram
+name: instagram-sentiment-ci
 
 conda_env: conda.yaml
 
