@@ -1,4 +1,4 @@
-name: Retrain Model
+name: Retrain Sentiment Model
 
 on:
   push:
@@ -8,10 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  train:
+  retrain:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -25,10 +26,56 @@ jobs:
           pip install -r MLProject/requirements.txt
 
       - name: Train Model
+        working-directory: MLProject
         run: |
-          python MLProject/modelling.py
+          python modelling.py
 
-      - name: Upload MLflow Artifacts
+      - name: Verify MLflow Output
+        run: |
+          ls -R MLProject/mlruns
+
+      - name: Upload MLflow Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-artifacts
+          path: |
+            MLProject/mlrunsname: Retrain Sentiment Model
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r MLProject/requirements.txt
+
+      - name: Train Model
+        working-directory: MLProject
+        run: |
+          python modelling.py
+
+      - name: Verify MLflow Output
+        run: |
+          ls -R MLProject/mlruns
+
+      - name: Upload MLflow Artifact
         uses: actions/upload-artifact@v4
         with:
           name: mlflow-artifacts
